@@ -8,10 +8,13 @@ Additional widgets and utilities for [Guichan](http://gitorious.org/guichan).
 ### FunctorActionListener ###
 An adapter that glues together `std::function` and `gcn::ActionListener` which 
 allows the use of arbitrary functions as callbacks to handle `ActionEvent`s 
-without having to implementthe `gcn::ActionListener` interface Favors 
+without having to implement the `gcn::ActionListener` interface. Favors 
 composition over inheritance.
 
 ```c++
+//
+// Create a button first
+//
 std::unique_ptr<gcn::Button> startButton(new gcn::Button("Start"));
 
 //

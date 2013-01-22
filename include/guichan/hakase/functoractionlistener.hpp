@@ -58,7 +58,7 @@ namespace gcn
     public:
 
         /**
-         * Constructor. Accepts a function object to call when actionb is 
+         * Constructor. Accepts a function object to call when action is 
          * performed. Defaults to no-op function.
          */
         FunctorActionListener(const ActionListenerCallback& callback = ActionListenerCallback());

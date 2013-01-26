@@ -61,7 +61,7 @@ namespace gcn
          * Constructor. Accepts a function object to call when action is 
          * performed. Defaults to no-op function.
          */
-        FunctorActionListener(const ActionListenerCallback& callback = ActionListenerCallback());
+        explicit FunctorActionListener(const ActionListenerCallback & callback = ActionListenerCallback());
 
         /**
          * Destructor.
@@ -70,7 +70,15 @@ namespace gcn
 
         const ActionListenerCallback& getCallback() const;
 
-        void setCallback(const ActionListenerCallback& callback);
+        /**
+         * Sets the callback function, copies callback by value.
+         */
+        void setCallback(const ActionListenerCallback & callback);
+
+        /**
+         * Sets the callback function, uses an rvalue reference.
+         */
+        void setCallback(const ActionListenerCallback && callback);
 
         // Inherited from ActionListener
 

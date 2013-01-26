@@ -74,7 +74,7 @@ namespace gcn
             auto glyph = (*itr);
             
             mGlyphMap.emplace(
-                std::make_pair<char, Rectangle>(
+                std::make_pair(
                     glyph, 
                     Rectangle(i * mGlyphWidth, 0, mGlyphWidth, mGlyphHeight)));
         }
@@ -99,12 +99,6 @@ namespace gcn
                 {
                     const auto & glyph = (*itr);
                     const auto & glyphRectanglePair = mGlyphMap.find(glyph);
-
-                    if(glyph == '\n') {
-                        dy += mGlyphHeight;
-                        dx = x;
-                        continue;
-                    }
 
                     if (glyphRectanglePair != mGlyphMap.end())
                     {
@@ -141,9 +135,18 @@ namespace gcn
         {
             return -1;
         }
+        else if (x == 0)
+        {
+            return 0;
+        }
 
         const int width = getWidth(text);
 
-        return width / x;
+        if (x >= width)
+        {
+            return text.size();
+        }
+
+        return x / mGlyphWidth;
     }
 }

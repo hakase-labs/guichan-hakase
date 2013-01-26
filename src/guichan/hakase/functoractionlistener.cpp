@@ -45,7 +45,7 @@
 
 namespace gcn
 {
-    FunctorActionListener::FunctorActionListener(const ActionListenerCallback& callback)
+    FunctorActionListener::FunctorActionListener(const ActionListenerCallback & callback)
     {
         mCallback = callback;
     }
@@ -58,6 +58,11 @@ namespace gcn
     void FunctorActionListener::setCallback(const ActionListenerCallback& callback)
     {
         mCallback = callback;
+    }
+
+    void FunctorActionListener::setCallback(const ActionListenerCallback && callback)
+    {
+        mCallback = std::move(callback);
     }
 
     void FunctorActionListener::action(const ActionEvent& actionEvent)

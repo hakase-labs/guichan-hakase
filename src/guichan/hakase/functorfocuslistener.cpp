@@ -39,6 +39,8 @@
  * For comments regarding functions please see the header file.
  */
 
+#include <utility>
+
 #include "guichan/hakase/functorfocuslistener.hpp"
 
 namespace gcn

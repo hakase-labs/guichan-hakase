@@ -1,7 +1,11 @@
-guichan-hakase
-==============
+guichan-extensions
+==================
 
-Additional widgets and utilities for [Guichan](http://gitorious.org/guichan). 
+Additional widgets and utilities for the [Guichan](http://gitorious.org/guichan) GUI library.
+
+Additions to the library include:
+* Fixed-size fonts
+* Event/action adapters that allow using `std::function`
 
 ## Fonts ##
 

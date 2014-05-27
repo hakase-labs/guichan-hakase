@@ -5,6 +5,7 @@ Additional widgets and utilities for the [Guichan](http://gitorious.org/guichan)
 
 Additions to the library include:
 * Fixed-size fonts
+* Multi-line labels
 * Event/action adapters that allow using `std::function`
 
 ## Fonts ##
@@ -27,6 +28,22 @@ std::unique_ptr<gcn::FixedImageFont> fixedImageFont(
 // Now you can draw your image font all over everything
 //
 gcn::Widget::setGlobalFont(fixedImageFont.get());
+```
+
+## Label ##
+
+### LabelEx ###
+An implementation of `gcn::Label` that can handle strings containing newline characters.
+The label will render on multiple lines, supports alignment, and will have the correct
+dimensions.
+
+```c++
+const std::string multiLineString("Hey! Thing string has\nmutliple lines!");
+
+//
+// The label will be two lines tall since the string has two lines of text.
+//
+gcn::LabelEx label(multiLineString);
 ```
 
 ## Utilities ##
